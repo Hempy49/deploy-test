@@ -3,14 +3,14 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + 'public/views');
 app.set('view engine', 'html');
 
 app.get('/', function(request, response) {
-  response.render('views/index.html');
+  response.render('public/views/index.html');
 });
 
 app.listen(app.get('port'), function() {
